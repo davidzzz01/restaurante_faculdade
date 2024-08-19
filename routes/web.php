@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\PedidoController;
+use \App\Http\Controllers\CadastroProdutoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::middleware(('admin'))->group(function(){
-Route::get('admin', function(){
-    dd('voce é um admin');
+
+
+    Route::get('/dashboard',[PedidoController::class, 'dashboard']);
+    Route::get('/cadastro', [CadastroProdutoController::class, 'cadastroProduto']);
+    Route::post('cadastro',[CadastroProdutoController::class, 'store'])->name('cadastrar');
+    
 });
-});
+
 
 Route::middleware(('client'))->group(function(){
     Route::get('client', function(){
