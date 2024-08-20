@@ -8,7 +8,10 @@ class CadastroProdutoController extends Controller
 {
 
     public function cadastroProduto()
+
+
     {
+      
         return view('Admin.cadastro'); 
     }
 

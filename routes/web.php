@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PedidoController;
 use \App\Http\Controllers\CadastroProdutoController;
+use \App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +31,10 @@ Route::middleware(('admin'))->group(function(){
 
 
 Route::middleware(('client'))->group(function(){
-    Route::get('client', function(){
-        dd('voce é um client');
-    });
+   Route::get('/index',[ClientController::class, "index"]);
+
+
+
     });
 
 
