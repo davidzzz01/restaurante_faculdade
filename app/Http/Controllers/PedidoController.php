@@ -5,6 +5,7 @@ use App\Models\Pedido;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Item;
 
 
 class PedidoController extends Controller
@@ -23,4 +24,11 @@ ORDER BY  pedidos.id, users.name,  pedidos.created_at, pedidos.total; ');
 ///aqui retorno uma view
 return view ('Admin.dashboard', compact('pedidos'));
 }
+
+
+
+
+
+ 
+
 }

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+
 <body>
     <h1>Olá, bem vindo</h1>
-
 
     <div class="container">
         <div class="row">
@@ -20,13 +12,18 @@
                         <h5 class="card-title">{{ $item->nome }}</h5>
                         <p class="card-text">{{ $item->descricao }}</p>
                         <h3 class="card-text">R${{ $item->preco }}</h3>
-                        <a href="#" class="btn btn-danger mt-auto ">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping">  </i></a> <
+
+                        <form action="{{ route('carrinho.adicionar', $item->id) }}" method="POST" class="mt-auto">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
+                        </form>
+                        <a href="{{ route('carrinho.exibir') }}" class="btn btn-primary mb-4">Ver Carrinho</a>
+
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
-    
 </body>
 </html>
