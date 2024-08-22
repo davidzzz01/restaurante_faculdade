@@ -39,8 +39,7 @@ class CadastroProdutoController extends Controller
 }
 
 public function destroy($id){
- $item = Item::findOrFail($id);
- $item->delete();
+  $item = Item::whereId($id)->delete();
 
  return view('Admin.cadastro');
 
