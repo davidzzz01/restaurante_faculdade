@@ -13,8 +13,11 @@ Route::get('/', function () {
 
 Route::middleware(('admin'))->group(function(){
 Route::get('/dashboard',[PedidoController::class, 'dashboard']);
+Route::delete('dashboard/{id}', [PedidoController::class, 'destroy']);
 Route::get('/cadastro', [CadastroProdutoController::class, 'cadastroProduto']);
-Route::post('cadastro',[CadastroProdutoController::class, 'store'])->name('cadastrar');   
+Route::post('cadastro',[CadastroProdutoController::class, 'store'])->name('cadastrar'); 
+Route::delete('cadastro/{id}', [CadastroProdutoController::class, 'destroy'])->name('excluir');
+Route::put('cadastro/{id}', [CadastroProdutoController::class, 'statusUpdate'])->name('update');
 });
 
 

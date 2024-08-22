@@ -17,7 +17,7 @@
                             @csrf
                             <button type="submit" class="btn btn-danger">Adicionar ao carrinho <i class="fa-solid fa-cart-shopping"></i></button>
                         </form>
-                        <a href="{{ route('carrinho.exibir') }}" class="btn btn-primary mb-4">Ver Carrinho</a>
+                       
 
                     </div>
                 </div>
@@ -25,5 +25,8 @@
             @endforeach
         </div>
     </div>
+
+    <a href="{{ route('carrinho.exibir') }}" class="btn btn-primary mb-4">Ver Carrinho</a>
+    
 </body>
 </html>

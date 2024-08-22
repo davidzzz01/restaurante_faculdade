@@ -37,4 +37,12 @@ class CadastroProdutoController extends Controller
     }
     return view('Admin.cadastro')->with('inserted', ' produto cadastrado com sucesso!');
 }
+
+public function destroy($id){
+ $item = Item::findOrFail($id);
+ $item->delete();
+
+ return view('Admin.cadastro');
+
+}
 }

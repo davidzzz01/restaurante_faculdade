@@ -21,10 +21,32 @@ ORDER BY  pedidos.id, users.name,  pedidos.created_at, pedidos.total; ');
 
 
 
+
 ///aqui retorno uma view
 return view ('Admin.dashboard', compact('pedidos'));
+
 }
 
+
+public function destroy($id){
+    $pedido = Pedido::findOrFail($id);
+    $pedido->delete();
+  
+    return view('Admin.dashboard');
+
+   }
+
+   public function statusUpdate( Request $request, $id){
+    $pedido = Pedido::findOrFail($id);
+    $pedido->update([
+
+    'status' => $request->status,
+
+    ]);
+    return view ('Admin.dashboard', compact('pedidos'));
+    
+
+   }
 
 
 
