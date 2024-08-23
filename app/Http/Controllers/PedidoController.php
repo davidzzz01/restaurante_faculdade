@@ -20,10 +20,14 @@ JOIN itens ON pedidos.item_id = itens.id
 ORDER BY  pedidos.id, users.name,  pedidos.created_at, pedidos.total; ');
 
 
-
-
+$totalGeral = 0;
+foreach ($pedidos as $pedido) {
+    $preco_br = floatval($pedido->total);
+    $totalGeral += $preco_br;
+}
+$totalGeralFormatado = number_format($totalGeral, 2, ',', '.');
 ///aqui retorno uma view
-return view ('Admin.dashboard', compact('pedidos'));
+return view ('Admin.dashboard', compact('pedidos', 'totalGeralFormatado'));
 
 }
 
