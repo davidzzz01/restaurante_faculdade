@@ -1,6 +1,6 @@
 
 <x-NavBar/>
-    <h1 class="text-center mb-4 mt-2">Dashboard</h1>
+    <h1 class="text-center mb-4 mt-2">DASHBOARD</h1>
 
     <div class="container">
         <table class="table table-hover table-bordered table-striped table-condensed">
@@ -21,9 +21,9 @@
                         <td scope="row">{{ $pedido->pedido_id }}</td>
                         <td>{{ $pedido->nome_cliente }}</td>
                         <td>{{ $pedido->nome_item }}</td>
-                        <td class="text-right">R${{ number_format($pedido->total, 2, ',', '.') }}</td>
-                        <td class ="text-center" style="text-transform: uppercase;">{{ $pedido->status }}</td>
-                        <td class ="text-center" style="width: 120px;">{{ date('d-m-Y', strtotime($pedido->item_create_at)) }}</td>
+                        <td class="text-right">R$ {{ $pedido->preco }}</td>
+                        <td class ="text-center"  style="text-transform: uppercase; color:{{$pedido->color}}">{{ $pedido->status }}</td>
+                        <td class ="text-center" style="width: 120px;">{{ $pedido->data }}</td>
                         <td class="d-flex" style="width: 170px;">
                             <form action="{{ route('update', ['id' => $pedido->pedido_id]) }}" method="POST">
                                 @csrf
@@ -59,7 +59,9 @@
     background-color: #dc3545;
     color: white;
  text-align: center;
+ align-self: center;
 }
+
 
 
 

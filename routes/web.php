@@ -17,7 +17,7 @@ Route::delete('dashboard/{id}', [PedidoController::class, 'destroy']);
 Route::get('/cadastro', [CadastroProdutoController::class, 'cadastroProduto']);
 Route::post('cadastro',[CadastroProdutoController::class, 'store'])->name('cadastrar'); 
 Route::delete('cadastro/{id}', [CadastroProdutoController::class, 'destroy'])->name('excluir');
-Route::put('cadastro/{id}', [CadastroProdutoController::class, 'statusUpdate'])->name('update');
+Route::put('cadastro/{id}', [PedidoController::class, 'statusUpdate'])->name('update');
 });
 
 

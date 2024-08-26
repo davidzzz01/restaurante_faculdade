@@ -1,7 +1,7 @@
 <div>
     <div>
         <nav class="navbar navbar-expand-lg bg-danger custom-navbar" style="height: 100px;">
-            <div class="container-fluid d-flex justify-content-between">
+            <div class="container-fluid justify-content-end">
                 <img style="width:60px;" src="https://cdni.iconscout.com/illustration/premium/thumb/pizza-3517875-2938927.png?f=webp" alt="Logo">
                 <a class="navbar-brand" href="#" style="font-size: 30px;">Restaurant</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -14,13 +14,16 @@
                             <a class="nav-link" href="#">Nossa história</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produtos</a>
+                            <a class="nav-link" href="/index">Produtos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('carrinho.exibir') }}">Meu Carrinho</a>
                         </li>
                     </ul>
                 </div>
@@ -29,10 +32,8 @@
         
         
     </div>
-    <style>
+<style>
 .nav-link{color:white;}
 .navbar-brand{color: yellow;font-size:50px;   margin-left: 10px; }
-.custom-navbar .container-fluid {display: flex;justify-content: space-between;align-items: center; 
-}
-
-    </style>
+.custom-navbar .container-fluid {display: flex;justify-content: space-between;align-items: center;}
+</style>

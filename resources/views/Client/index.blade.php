@@ -1,8 +1,8 @@
-
+<x-NavBar/>
 <body>
-    <h1>Olá, bem vindo</h1>
 
-    <div class="container">
+
+    <div class="container mt-5">
         <div class="row">
             @foreach ($itens as $item)
             <div class="col-md-3 d-flex align-items-stretch"> 
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <a href="{{ route('carrinho.exibir') }}" class="btn btn-primary mb-4">Ver Carrinho</a>
+  
     
 </body>
 </html>
